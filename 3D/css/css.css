@@ -1,0 +1,20 @@
+html {
+	background-image: url(../glav.jpg);
+	color:#9c9797;
+}
+img {
+	width: 400px;
+	padding-left: 50px;
+}
+.начало {
+	font-weight: bold;
+}
+h1 {
+	width:500px;
+	padding-left: 400px;
+}
+.картинка {
+	padding-top:50px;
+	width: 400px;
+	padding-left: 400px;
+}

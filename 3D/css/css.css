@@ -1,20 +1,38 @@
 html {
 	background-image: url(../glav.jpg);
-	color:#9c9797;
+	color:#e4dddd;
 }
 img {
-	width: 400px;
-	padding-left: 50px;
+	margin:auto;
+	box-shadow: 0.4em 0.4em 30px rgba(02,34,34,0.7);
 }
 .начало {
 	font-weight: bold;
+	font-size: 16pt;
 }
 h1 {
 	width:500px;
 	padding-left: 400px;
 }
 .картинка {
-	padding-top:50px;
+	padding-top:10px;
 	width: 400px;
-	padding-left: 400px;
+	margin:auto;
+	padding-bottom:50px;
+}
+.осткартинки {
+	height:300px;
+	vertical-align: middle;
+	
+}
+.234567 {
+	
+}
+#map {
+	height: 400px;
+	width: 700px;
+	margin:auto;
+}
+.карта {
+	text-align:center;
 }

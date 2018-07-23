@@ -1,0 +1,16 @@
+.column {
+	box-sizing: border-box;
+	padding:20px;
+	float:left;
+	width:25%;
+}
+@media screen and (max-width: 992px) {
+    .column {
+		width:50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .column {
+		width:100%;
+    }
+}

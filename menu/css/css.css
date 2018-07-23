@@ -1,0 +1,22 @@
+.topnav{
+	background-color:black;
+}
+a{
+	display: inline-block;
+	font-family:Arial;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+	padding-right:5px;
+	text-decoration: none;
+	color:white;
+}
+a:hover{
+	background-color:gray;
+	color:black;
+}
+@media screen and (max-width: 400px) {
+  a {
+	display: block;
+  }
+}

@@ -1,0 +1,108 @@
+
+body {
+	margin:0px;
+	background-color:#009999;
+}
+p {
+	margin:0px;
+}
+#page{
+	max-width:1000px;
+	min-width:500px;
+	margin: 0 auto;
+}
+#page_header {
+    position: relative;
+    height: 130px;
+    margin: 0;
+	background-color:#015666;
+}
+#page_center {
+	position: relative;
+    margin: 0 auto;
+    font-size: 12.5px;
+	background-color:#dee8e9;
+	z-index:1;
+	width:100%;
+}
+#info_more {
+	position: relative;
+	padding-bottom:50px;
+    margin: 0 auto;
+    font-size: 12.5px;
+	background-color:#f4ffff;
+	color:#015666;
+	z-index:1;
+	width:100%;
+	box-shadow: 0px 10px 15px #b9bfc0;
+}
+#glav_text {
+	font-family:"RobotoCondensed-Bold", sans-serif;
+	padding-top:50px;
+	font-size: 250%;
+	text-align:center;
+	line-height: 55px;
+	font-weight: 800;
+}
+.glav_info {
+	color:#f4ffff;
+	width: 250px;
+	font-size: 1.5em;
+	line-height: 35px;
+	float:right;
+	padding-right:20px;
+}
+#page_header > img {
+	float:left;
+}
+#torg {
+
+}
+.content{
+	margin:30px;
+	box-shadow: 0 0 10px #cccccc;
+	font-family: Arial;
+    position: relative;
+
+}
+.описание {
+	font-family:"RobotoCondensed-Bold", sans-serif;
+	position:absolute;
+	top:0px;
+	background-color:rgba(255,255,255,0.6);
+	width: 100%;
+	height:100%;
+	opacity:0;
+	padding:20px;
+	box-sizing: border-box;
+	font-size: 1.5em;
+	line-height: 1.5em;
+	font-weight: 800;
+	color:#0f4444;
+	text-align:left;
+	display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+	transition-property: opacity;
+	transition-duration: 1s;
+}
+.clearfix{
+	clear: both;
+}
+.page_center_down{
+	 display: flex;
+	justify-content:space-around;
+	flex-wrap:wrap;
+	margin:auto;
+}
+
+.описание:hover {
+	opacity:1;
+}
+.price {
+	align-self: flex-end;
+}
+.img_store{
+	padding: 12px;
+}

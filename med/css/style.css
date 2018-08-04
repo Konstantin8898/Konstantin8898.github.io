@@ -46,7 +46,7 @@ p {
 }
 .glav_info {
 	color:#f4ffff;
-	width: 250px;
+
 	font-size: 1.5em;
 	line-height: 35px;
 	float:right;
@@ -105,4 +105,9 @@ p {
 }
 .img_store{
 	padding: 12px;
+}
+@media screen and (max-width: 400px) {
+  .content {
+	display: block;
+  }
 }

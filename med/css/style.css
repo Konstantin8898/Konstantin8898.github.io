@@ -6,9 +6,11 @@ body {
 p {
 	margin:0px;
 }
+.logo{
+	 width:145px;
+}
 #page{
 	max-width:1000px;
-	min-width:500px;
 	margin: 0 auto;
 }
 #page_header {
@@ -36,7 +38,7 @@ p {
 	font-family:"RobotoCondensed-Bold", sans-serif;
 	font-size: 250%;
 	text-align:center;
-	line-height: 55px;
+	line-height: 1.7em;
 	font-weight: 800;
 	box-sizing: border-box;
 }
@@ -101,6 +103,7 @@ p {
 }
 .img_store{
 	padding: 12px;
+		box-sizing: border-box;
 }
 .phone-number{
 	color:#f4ffff;
@@ -114,18 +117,31 @@ p {
 	float: left;
 }
 @media screen and (max-width: 400px) {
+	.glav_info {
+	font-size: 1.2em;
+}
+  .logo{
+	width:70px;
+	margin:0.83em;
+}
   .content {
 	display: block;
 	font-size:14px;
   }
   .описание {
 	position:static;
-	width: 424px;
+	max-width: 424px;
 	height:auto;
 	opacity:1;
   }
   .price{
-	  padding-top:20px;
+	padding-top:20px;
+  }
+  .img_store{
+	width:100%;
+  }
+  #info_more{
+	font-size: 150%;
   }
 }
 @media screen and (max-width: 750px) {

@@ -116,7 +116,16 @@ p {
 @media screen and (max-width: 400px) {
   .content {
 	display: block;
-	font-size:14px ;
+	font-size:14px;
+  }
+  .описание {
+	position:static;
+	width: 424px;
+	height:auto;
+	opacity:1;
+  }
+  .price{
+	  padding-top:20px;
   }
 }
 @media screen and (max-width: 750px) {

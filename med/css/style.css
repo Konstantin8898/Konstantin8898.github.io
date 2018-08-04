@@ -112,5 +112,6 @@ p {
 @media screen and (max-width: 400px) {
   .content {
 	display: block;
+	font-size:14px ;
   }
 }

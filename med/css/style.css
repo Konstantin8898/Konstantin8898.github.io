@@ -26,22 +26,21 @@ p {
 }
 #info_more {
 	position: relative;
-	padding-bottom:50px;
+	padding:20px;
     margin: 0 auto;
     font-size: 12.5px;
 	background-color:#f4ffff;
 	color:#015666;
 	width:100%;
 	box-shadow: 0px 10px 15px #b9bfc0;
-}
-#glav_text {
 	font-family:"RobotoCondensed-Bold", sans-serif;
-	padding-top:50px;
 	font-size: 250%;
 	text-align:center;
 	line-height: 55px;
 	font-weight: 800;
+	box-sizing: border-box;
 }
+
 .glav_info {
 	color:#f4ffff;
 	font-size: 1.5em;

@@ -106,6 +106,9 @@ p {
 .img_store{
 	padding: 12px;
 }
+.phone-number{
+	color:#f4ffff;
+}
 @media screen and (max-width: 400px) {
   .content {
 	display: block;

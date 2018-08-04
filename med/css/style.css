@@ -46,7 +46,6 @@ p {
 }
 .glav_info {
 	color:#f4ffff;
-
 	font-size: 1.5em;
 	line-height: 35px;
 	float:right;
@@ -108,6 +107,14 @@ p {
 }
 .phone-number{
 	color:#f4ffff;
+}
+.new{
+	color:#f4ffff;
+	font-size: 1.5em;
+	line-height: 35px;
+	padding-left:20px;
+	height:50px;
+	float: left;
 }
 @media screen and (max-width: 400px) {
   .content {

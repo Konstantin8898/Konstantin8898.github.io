@@ -1,0 +1,48 @@
+body {
+  background: #20262E;
+  font-family: Helvetica;
+  font-size: 15px;
+  color: #fff;
+}
+
+#message-panel{
+  margin-left: 40px;
+}
+
+#input-field {
+  background: #fff;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px 40px;
+  position: fixed;
+  bottom: 0;
+}
+
+textarea {
+  background: #0084ff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  width: 600px;
+  color: #fff;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+::placeholder{
+  color: #70e4ff;
+}
+
+#messages{
+  padding-bottom: 89px;
+}
+
+.message{
+  background: #40464E;
+  border-radius: 5px;
+  padding: 8px 14px;
+  margin: 20px 0;
+  width: 500px;
+}

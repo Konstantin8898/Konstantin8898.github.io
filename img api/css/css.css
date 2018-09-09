@@ -19,6 +19,13 @@ body {
   font-size: 2em;
   padding: 16px 0;
   padding-left: 16px;
+  float: left;
+}
+
+#cardById{
+  margin: 16px 0;
+  float: right;  
+  padding: 6px;
 }
 
 .gallery {

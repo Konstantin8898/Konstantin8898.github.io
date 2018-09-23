@@ -1,3 +1,8 @@
+var items = [
+	
+];
+var itemsData = Cookies.getJSON('items');
+
 $(function(){
 	var span = $("<span class='close'>×</span>");
 	span.click(close);
@@ -5,12 +10,23 @@ $(function(){
 	$("li").click(check);
 	$( ".addBtn" ).click(add);
 	$( "#myInput" ).on( "keydown", addEnter );
-});
-var items = [
 	
-];
-var itemsData = Cookies.getJSON('items');
-console.log(itemsData);
+	
+	for(var i = 0; i < itemsData.length; i++){
+		var it = itemsData[i];
+		var item = $("<li>");
+		item.text(it.text); 
+		if (it.done){
+			item.addClass("checked");
+		}
+		var span = $("<span class='close'>×</span>");
+		span.click(close);
+		item.append(span);
+		item.click(check);
+		$("#myUL").append(item);
+	}
+});
+
 function close(){
 	$(this).parent().css("display","none");
 }

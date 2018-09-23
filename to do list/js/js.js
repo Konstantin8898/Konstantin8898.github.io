@@ -34,6 +34,11 @@ function close(){
 }
 function check (){
 	$(this).toggleClass("checked");
+	
+	if ( $(this).hasClass("checked") ){
+		var index = $( "li" ).index(this);
+		items[index].done = true;
+	}
 }
 function add(event){ 
 	if ( !(/^\s*$/.test($("#myInput").val())) ){

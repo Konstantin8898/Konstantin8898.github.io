@@ -9,7 +9,8 @@ $(function(){
 var items = [
 	
 ];
-
+var itemsData = Cookies.getJSON('items');
+console.log(itemsData);
 function close(){
 	$(this).parent().css("display","none");
 }
@@ -26,8 +27,8 @@ function add(event){
 		item.click(check);
 		$("#myUL").append(item);
 		var business = {
-			done:false,
-			text:$("#myInput").val()
+			done: false,
+			text: $("#myInput").val()
 		};
 		items.push(business);
 		Cookies.set('items', items);

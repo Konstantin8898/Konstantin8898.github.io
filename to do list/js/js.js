@@ -35,7 +35,7 @@ function check (){
 }
 function add(event){ 
 	if ( !(/^\s*$/.test($("#myInput").val())) ){
-		var item = $("li").eq(0).clone();
+		var item = $("<li>");
 		item.text($("#myInput").val()); 
 		var span = $("<span class='close'>×</span>");
 		span.click(close);

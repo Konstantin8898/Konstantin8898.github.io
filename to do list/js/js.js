@@ -38,6 +38,7 @@ function check (){
 	if ( $(this).hasClass("checked") ){
 		var index = $( "li" ).index(this);
 		items[index].done = true;
+		Cookies.set('items', items);
 	}
 }
 function add(event){ 

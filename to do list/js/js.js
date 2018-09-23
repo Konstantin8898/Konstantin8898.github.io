@@ -35,11 +35,14 @@ function close(){
 function check (){
 	$(this).toggleClass("checked");
 	
+	var index = $( "li" ).index(this);
 	if ( $(this).hasClass("checked") ){
-		var index = $( "li" ).index(this);
 		items[index].done = true;
-		Cookies.set('items', items);
 	}
+	else {
+		items[index].done = false;
+	}
+	Cookies.set('items', items);
 }
 function add(event){ 
 	if ( !(/^\s*$/.test($("#myInput").val())) ){

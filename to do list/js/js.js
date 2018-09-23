@@ -24,6 +24,8 @@ $(function(){
 		item.append(span);
 		item.click(check);
 		$("#myUL").append(item);
+		items.push(it);
+		Cookies.set('items', items);
 	}
 });
 

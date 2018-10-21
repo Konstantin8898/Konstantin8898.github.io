@@ -6,7 +6,7 @@ var itemsData;
 function getter( data ) {
     itemsData = data;
 }
-$.get( "http://localhost:1337/api/actions", getter);
+$.get( "api/actions", getter);
 
 $(function(){
 	var span = $("<span class='close'>×</span>");
@@ -49,26 +49,27 @@ function check (){
 	}
 	Cookies.set('items', items);
 }
-function add(event){ 
-	if ( !(/^\s*$/.test($("#myInput").val())) ){
-		var item = $("<li>");
-		item.text($("#myInput").val()); 
-		var span = $("<span class='close'>×</span>");
-		span.click(close);
-		item.append(span);
-		item.click(check);
-		$("#myUL").append(item);
-		var business = {
-			done: false,
-			text: $("#myInput").val()
-		};
-		items.push(business);
-		Cookies.set('items', items);
-	}
-	$("#myInput").val("");
+function add(event){
+    if ( !(/^\s*$/.test($("#myInput").val())) ){
+        var item = $("<li>");
+        item.text($("#myInput").val());
+        var span = $("<span class='close'>×</span>");
+        span.click(close);
+        item.append(span);
+        item.click(check);
+        $("#myUL").append(item);
+        var business = {
+            done: false,
+            text: $("#myInput").val()
+        };
+        items.push(business);
+        Cookies.set('items', items);
+    }
+    $("#myInput").val("");
 }
 function addEnter(event) {
 	if (event.keyCode == 13) { // enter
 		add();
 	}
 }
+

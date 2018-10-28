@@ -3,7 +3,7 @@ var path = require('path'); // модуль для парсинга пути
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var app = express();
-var ActionModel    = require('./Mongoose').ActionModel;
+var ActionModel = require('./Mongoose').ActionModel;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -25,7 +25,17 @@ app.route('/api/actions').get(function (req, res) {
 });
 
 app.route('/api/actions').post(function (req, res) {
-    res.send('post');
+    var action = new ActionModel({
+        text: req.body.text,
+        done: req.body.done
+    });
+
+    action.save(function (err) {
+        if (!err) {
+            console.log("action created");
+            return res.send({status: 'OK', action: action});
+        }
+    });
 });
 
 app.route('/api/actions/:id').get(function (req, res) {
@@ -37,5 +47,13 @@ app.route('/api/actions/:id').put(function (req, res) {
 });
 
 app.route('/api/actions/:id').delete(function (req, res) {
-    res.send('This is not implemented now');
+    return ActionModel.find(function (err, actions) {
+        var action = actions[req.params.id];
+        return action.remove(function (err) {
+            if (!err) {
+                console.log("action removed");
+                return res.send({ status: 'OK' });
+            }
+        });
+    });
 });

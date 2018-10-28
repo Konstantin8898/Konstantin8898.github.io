@@ -16,7 +16,7 @@ $(function(){
 	$( ".addBtn" ).click(add);
 	$( "#myInput" ).on( "keydown", addEnter );
 	
-	
+
 	for(var i = 0; i < itemsData.length; i++){
 		var it = itemsData[i];
 		var item = $("<li>");
@@ -30,12 +30,17 @@ $(function(){
 		item.click(check);
 		$("#myUL").append(item);
 		items.push(it);
-		Cookies.set('items', items);
 	}
 });
 
 function close(){
-	$(this).parent().css("display","none");
+    let item = $(this).parent();
+	var index = $( "li" ).index(item);
+    item.css("display","none");
+    $.ajax({
+        method: "DELETE",
+        url: "api/actions/" + index
+    });
 }
 function check (){
 	$(this).toggleClass("checked");
@@ -58,12 +63,12 @@ function add(event){
         item.append(span);
         item.click(check);
         $("#myUL").append(item);
-        var business = {
+        var action = {
             done: false,
             text: $("#myInput").val()
         };
-        items.push(business);
-        Cookies.set('items', items);
+        items.push(action);
+        $.post( "/api/actions", action );
     }
     $("#myInput").val("");
 }

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test1', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/todo', { useNewUrlParser: true });
 var db = mongoose.connection;
 
 db.on('error', function (err) {

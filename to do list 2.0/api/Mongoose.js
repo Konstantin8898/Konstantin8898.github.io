@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/todo', { useNewUrlParser: true });
+//mongoose.connect('mongodb://46.39.253.18:1337/todo', { useNewUrlParser: true });
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -21,3 +22,4 @@ var Action = new Schema({
 var ActionModel = mongoose.model('Action', Action);
 
 module.exports.ActionModel = ActionModel;
+module.exports.db = db;

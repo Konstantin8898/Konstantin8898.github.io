@@ -8,7 +8,9 @@ var ActionModel = require('./Mongoose').ActionModel;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override')); // поддержка put и delete
-app.use(express.static(path.join(__dirname, ".."))); // запуск статического файлового сервера, который смотрит на папку ../ (в нашем случае отдает index.html)
+require('./Mongoose').db.once('open', function callback () {
+    app.use(express.static(path.join(__dirname, ".."))); // запуск статического файлового сервера, который смотрит на папку ../ (в нашем случае отдает index.html)
+});
 
 app.listen(1337, function () {
     console.log('Express server listening on port 1337');
@@ -43,7 +45,23 @@ app.route('/api/actions/:id').get(function (req, res) {
 });
 
 app.route('/api/actions/:id').put(function (req, res) {
-    res.send('This is not implemented now');
+    return ActionModel.find(function (err, actions) {
+        var action = actions[req.params.id];
+        if(!action) {
+            res.statusCode = 404;
+            return res.send({ error: 'Not found' });
+        }
+
+        action.done = req.body.done;
+        return action.save(function (err) {
+            if (!err) {
+                console.log("action updated");
+                return res.send({ status: 'OK', action:action });
+            } else {
+                console.log('Internal error(%d): %s',res.statusCode,err.message);
+            }
+        });
+    });
 });
 
 app.route('/api/actions/:id').delete(function (req, res) {

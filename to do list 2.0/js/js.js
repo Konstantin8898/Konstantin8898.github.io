@@ -1,42 +1,34 @@
-var items = [
-	
-];
-
 var itemsData;
-function getter( data ) {
-    itemsData = data;
-}
-$.get( "api/actions", getter);
 
 $(function(){
-	var span = $("<span class='close'>×</span>");
-	span.click(close);
-	$("li").append(span);
-	$("li").click(check);
+    $.get( "api/actions", getter);
+
 	$( ".addBtn" ).click(add);
 	$( "#myInput" ).on( "keydown", addEnter );
-	
-
-	for(var i = 0; i < itemsData.length; i++){
-		var it = itemsData[i];
-		var item = $("<li>");
-		item.text(it.text); 
-		if (it.done){
-			item.addClass("checked");
-		}
-		var span = $("<span class='close'>×</span>");
-		span.click(close);
-		item.append(span);
-		item.click(check);
-		$("#myUL").append(item);
-		items.push(it);
-	}
 });
+
+function getter( data ) {
+    itemsData = data;
+
+    for(var i = 0; i < itemsData.length; i++){
+        var it = itemsData[i];
+        var item = $("<li>");
+        item.text(it.text);
+        if (it.done){
+            item.addClass("checked");
+        }
+        var span = $("<span class='close'>×</span>");
+        span.click(close);
+        item.append(span);
+        item.click(check);
+        $("#myUL").append(item);
+    }
+}
 
 function close(){
     let item = $(this).parent();
 	var index = $( "li" ).index(item);
-    item.css("display","none");
+    item.remove();
     $.ajax({
         method: "DELETE",
         url: "api/actions/" + index
@@ -46,13 +38,14 @@ function check (){
 	$(this).toggleClass("checked");
 	
 	var index = $( "li" ).index(this);
-	if ( $(this).hasClass("checked") ){
-		items[index].done = true;
-	}
-	else {
-		items[index].done = false;
-	}
-	Cookies.set('items', items);
+    var action = {
+        done: $(this).hasClass("checked")
+    };
+    $.ajax({
+        method: "PUT",
+        url: "api/actions/" + index,
+        data:action
+    });
 }
 function add(event){
     if ( !(/^\s*$/.test($("#myInput").val())) ){
@@ -67,7 +60,6 @@ function add(event){
             done: false,
             text: $("#myInput").val()
         };
-        items.push(action);
         $.post( "/api/actions", action );
     }
     $("#myInput").val("");
